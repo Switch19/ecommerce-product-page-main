@@ -7,64 +7,136 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | E-commerce product page</title>
+  <link rel="stylesheet" href="input.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="app.js" defer></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
-  <header class="container mx-auto flex justify-between items-center pt-8 px-6 mb-8">
+  <header class="container mx-auto flex justify-between items-center pt-8 px-6 mb-6">
+    <!-- Nav Section -->
     <nav class="flex justify-between">
-      <div class="logo mr-6 flex items-center">
-        <img src="./images/icon-menu.svg" class="md:hidden mr-4"  alt="">
-        <img src="./images/logo.svg" alt="logo">
+      <div class="logo mr-3 flex flex-row items-center">
+
+        <!-- Menu Toggle -->
+        <div class="menu md:hidden cursor-pointer">
+          <img src="./images/icon-menu.svg" class="mr-4"  alt="">
+        </div>
+        <!-- End of Menu Toggle -->
+
+        <img src="./images/logo.svg" class="" alt="logo">
       </div>
+      <!-- Desktop and Tablets Navbar -->
       <ul class="hidden md:flex">
         <li>
-          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-bold">Collections</a>
+          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-medium hover:border-b-4 pb-6 hover:border-orange hover:text-veryDarkBlue">Collections</a>
         </li>
         <li>
-          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-bold">Men</a>
+          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-medium hover:border-b-4 pb-6 hover:border-orange hover:text-veryDarkBlue">Men</a>
         </li>
         <li>
-          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-bold">Women</a>
+          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-medium hover:border-b-4 pb-6 hover:border-orange hover:text-veryDarkBlue">Women</a>
         </li>
         <li>
-          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-bold">About</a>
+          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-medium hover:border-b-4 pb-6 hover:border-orange hover:text-veryDarkBlue">About</a>
         </li>
         <li>
-          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-bold">Contact</a>
+          <a href="#" class="mr-4 text-sm text-darkGrayishBlue font-medium hover:border-b-4 pb-6 hover:border-orange hover:text-veryDarkBlue">Contact</a>
         </li>
       </ul>
+      <!-- End of Desktop and Tablets Navbar -->
     </nav>
+
+    <!-- End of NavSection -->
+
+    <!-- Profile Section -->
     <div class="checkout-profile flex items-center">
-      <img src="./images/icon-cart.svg" alt="cart-icon" class="w-6 mr-6">
-      <img src="./images/image-avatar.png" alt="avatar-icon" class="w-8">
+      <div class="">
+        <img src="./images/icon-cart.svg" alt="cart-icon" class="cart-icon w-6 cursor-pointer mr-4">
+        <span class="hidden cart-count-notify text-xs bg-orange rounded-full w-3 h-3 p-2 text-white flex justify-center items-center cursor-pointer"></span>
+      </div>
+      <img src="./images/image-avatar.png" alt="avatar-icon" class="profile  cursor-pointer w-8 hover:border-2 hover:border-orange rounded-full">
     </div>
+    <!-- End of Profile -->
   </header>
+
+  <!--  Mobile Navbar-->
+  <div class="close hidden mobile-menu bg-white w-6/12 pt-8 pl-6 md:hidden cursor-pointer">
+    <img src="./images/icon-close.svg" class="closebtn mb-6"  alt="">
+    <ul class=" text-xl font-bold">
+      <li class="mb-4"><a href="#"> Collections</a></li>
+      <li class="mb-4"><a href="#">Men</a></li>
+      <li class="mb-4"><a href="#">Women</a></li>
+      <li class="mb-4"><a href="#">Contact</a></li>
+      <li class="mb-4"><a href="#">About</a></li>
+    </ul>
+  </div>
+  <!-- End of Mobile Navbar -->
+  
   <hr class="hidden container mx-auto mb-8 md:block">
-  <main class="container flex flex-col justify-center items-center mx-auto md:px-6 py-8 md:flex-row md:justify-between">
+  <!-- cart Section -->
+
+  <div class="cart-section flex container mx-auto justify-center md:justify-end">
+  </div>
+   <!--End of cart section--  -->
+
+<main class="container flex flex-col justify-center items-start mx-auto md:px-6 py-8 md:flex-row md:justify-between">
+  <!-- Product Image -->
     <div class="w-full flex flex-col md:w-1/2">
       <div class="mb-6">
-        <img src="./images/image-product-1.jpg"class=" md:rounded-xl" alt="">
+        <img src="./images/image-product-1.jpg"class="main-product md:rounded-xl md:border-2" alt="">
+        <div class="move flex items-center justify-between px-8 md:hidden">
+          <div class="rounded-full bg-white flex justify-center items-center w-8 h-8 p-2 cursor-pointer">
+            <img src="./images/icon-previous.svg"  alt="move-icons">
+          </div>
+            <div class="rounded-full bg-white flex justify-center items-center w-8 h-8 p-2 cursor-pointer">
+              <img src="./images/icon-next.svg"  alt="move-icons">
+            </div>
+        </div>
       </div>
-      <div class="hidden md:flex justify-between">
-        <img src="./images/image-product-1-thumbnail.jpg" class="w-1/5 rounded-xl" alt="">
-        <img src="./images/image-product-2-thumbnail.jpg" class="w-1/5 rounded-xl" alt="">
-        <img src="./images/image-product-3-thumbnail.jpg" class="w-1/5 rounded-xl" alt="">
-        <img src="./images/image-product-4-thumbnail.jpg" class="w-1/5 rounded-xl" alt="">
+      <div class="hidden md:flex justify-between cursor-pointer">
+        <img src="./images/image-product-1-thumbnail.jpg" class="product product-1 w-1/5 rounded-xl border-2 border-orange hover:opacity-70" alt="">
+        <img src="./images/image-product-2-thumbnail.jpg" class="product product-2 w-1/5 rounded-xl border-2 border-orange hover:opacity-70" alt="">
+        <img src="./images/image-product-3-thumbnail.jpg" class="product product-3 w-1/5 rounded-xl border-2 border-orange hover:opacity-70" alt="">
+        <img src="./images/image-product-4-thumbnail.jpg" class="product product-4 w-1/5 rounded-xl border-2 border-orange hover:opacity-70" alt="">
       </div>
     </div>
-    <div class="text-left md:w-1/2">
-      <h4>Sneaker Company</h4>
-      <h1>Fall Limited Edition Sneakers</h1>
-      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+    <!-- End of Product Image -->
+
+    <!--About Product Name -->
+    <div class="text-left px-6 md:ml-16 md:mt-8 md:w-1/2">
+      <h4 class="text-sm text-orange font-medium mb-3">Sneaker Company</h4>
+      <h1 class="font-sans font-medium text-3xl mb-4">Fall Limited Edition Sneakers</h1>
+      <p class="text-sm text-darkGrayishBlue leading-normal tracking-wide mb-4">These low-profile sneakers are your perfect casual wear companion. Featuring a 
         durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
+      <!-- End of Product About -->
+
+      <!-- checkout Section -->
+      <div class="flex justify-between items-center pr-16 md:flex-col md:items-start mb-4">
+        <div class=" flex items-center">
+          <h2 class="font-bold text-xl mr-3">$125.00</h2>
+          <button class="text-orange bg-paleOrange px-2 font-semibold rounded">50%</button>
+        </div>
+        <p class="text-darkGrayishBlue font-medium">$250.00</p>
+      </div>
+      <div class="md:flex flex-row items-center">
+        <div class=" flex items-center justify-between bg-lightGrayishBlue mr-16 mb-4 p-3 rounded-lg md:mr-4 md:mb-0 md:w-32">
+          <button class="counter minus"><img src="./images/icon-minus.svg" alt=""></button>
+          <span  class="counter-result">0</span>
+          <button class="counter plus"><img src="./images/icon-plus.svg" alt=""></button>
+        </div>
+        <div class="add-to-cart rounded-lg bg-orange flex justify-center items-center mr-16 p-1 text-white text-sm hover:opacity-75 md:m-0 md:w-64">
+          <img src="./images/icon-cart.svg" alt="cart-icon" class="cart cart-result m-3 text-white cursor-pointer">
+          <h4 class="cart-result cursor-pointer">Add to cart</h4>
+        </div>
+     </div>
+     <!-- End of checkout Section -->
     </div>
   </main>
   
@@ -78,16 +150,15 @@
   
 
   
-  $125.00
-  50%
-  $250.00
+  
+  
 
-  0
-  Add to cart -->
+  
+   -->
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Switch Tega</a>.
   </div>
 </body>
 </html>

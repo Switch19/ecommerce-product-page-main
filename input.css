@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* transitions */
+a, button, .cart,.add-to-cart, img, .menu{
+    transition: .3s ease;
+}
+.menu{
+    position: relative;
+}
+.mobile-menu{
+    top: 0;
+    position: absolute;
+    height: 100vh;
+    z-index: 3;
+}
+.cart-count-notify{
+    position: absolute;
+    top: 1.6rem; 
+    margin-left: .5rem; 
+}
+.cart{
+    filter: brightness(0) invert(1);
+}
+.cart-icon{
+    position: relative;
+}
+.cart-div{
+    position: absolute;
+    z-index: 2;
+    top: 5rem;
+    box-shadow: -1px 2px 15px hsl(220, 14%, 75%);
+}
+.move{
+    position: relative;
+    transform: translateY(-15rem);
+
+}
+@media screen and (max-width:760px) {
+    .product{
+        width: 100vw;
+        height: 60vh;
+        object-fit: cover;
+    }
+    }
+@media screen and (max-width: 300px) {
+    .move{
+        position: relative;
+        transform: translateY(-10rem);
+    
+    }
+    .checkout-profile{
+        margin-left:1rem;
+    }
+}
