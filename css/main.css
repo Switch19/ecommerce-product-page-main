@@ -723,6 +723,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -800,6 +805,11 @@ video {
 .text-orange {
   --tw-text-opacity: 1;
   color: hsl(26 100% 55% / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 /* transitions */
@@ -912,6 +922,10 @@ a, button, .cart,.add-to-cart, img, .menu{
     margin-bottom: 0px;
   }
 
+  .md\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -934,6 +948,10 @@ a, button, .cart,.add-to-cart, img, .menu{
 
   .md\:w-64 {
     width: 16rem;
+  }
+
+  .md\:w-3\/12 {
+    width: 25%;
   }
 
   .md\:flex-row {
@@ -960,12 +978,30 @@ a, button, .cart,.add-to-cart, img, .menu{
     border-radius: 0.75rem;
   }
 
+  .md\:rounded {
+    border-radius: 0.25rem;
+  }
+
   .md\:border-2 {
     border-width: 2px;
+  }
+
+  .md\:p-0 {
+    padding: 0px;
+  }
+
+  .md\:p-6 {
+    padding: 1.5rem;
   }
 
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:w-4\/12 {
+    width: 33.333333%;
   }
 }

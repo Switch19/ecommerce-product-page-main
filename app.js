@@ -13,8 +13,8 @@ let counter = 0;
 
 const productImage = document.querySelector(".main-product");
 const products = document.querySelectorAll(".product");
-console.log(productImage);
-console.log(products);
+z// console.log(productImage);
+// console.log(products);
 
 // Menu and Cart Toggle
 menuOpen.addEventListener('click', () => {
@@ -22,38 +22,6 @@ menuOpen.addEventListener('click', () => {
 });
 menuCloseButton.addEventListener('click', () => {
     menuToggle(menuClose, menuOpen)
-});
-cartIcon.addEventListener('click', () => {
-    cartSection.classList.toggle('hidden')
-    let cartDiv = ` <div class="cart-div container bg-white rounded-xl flex flex-col justify-between  px-8 pt-8 pb-16 md:p-6 md:w-4/12 lg:w-3/12">
-    <h2 class="mb-4 text-xl font-medium text-darkGrayishBlue">Cart</h2>
-    <hr class="w-full mb-8 md:block">
-    <p class="mx-auto text-xl text-darkGrayishBlue pt-8 md:pb-4">Your cart is empty</p>
-    </div> 
-    `
-    if (counter > 0 && (cartNotification.classList.contains('hidden') === false)) {
-        cartTotal = 125 * counter;
-        cartTotal += cartTotal;
-        cartDiv = `
-        <div class="cart-div container bg-white rounded-xl flex flex-col justify-between  px-8 pt-8 pb-16 md:p-6 md:w-4/12 lg:w-3/12">
-        <h2 class="mb-4 text-xl font-medium text-darkGrayishBlue">Cart</h2>
-        <hr class="w-full mb-8 md:block">
-        <div class="flex justify-between items-center mb-4">
-          <img src="./images/image-product-1-thumbnail.jpg" class="w-1/4 rounded-xl mr-4 md:mr-2" alt="">
-          <div class="w-3/9">
-            <p class="text-sm text-darkGrayishBlue">Fall Limited Edition Sneakers</p>
-            <p class="text-sm text-darkGrayishBlue">$125.00 * <span>${counter}</span> <span class="font-bold text-black">${cartTotal}</span></p>
-          </div>
-          <img src="./images/icon-delete.svg" class="cursor-pointer" alt="delete-icon">
-        </div>
-        <div class="text-white rounded-lg bg-orange flex justify-center items-center container mx-auto py-3">
-          <h4 class="cursor-pointer p-">Checkout</h4>
-        </div>
-
-      </div> 
-        `
-    }
-    cartSection.innerHTML = cartDiv;
 });
 // counter and Cart Buttons
     counterButtons.forEach((count) => {
@@ -84,15 +52,48 @@ cartIcon.addEventListener('click', () => {
                 cartNotification.innerHTML = count;
             })
         })
-    }
+}
+
     products.forEach((product) => {
         product.addEventListener("click", (e) => {
             const currentProduct = e.currentTarget.classList[1];
             productImage.src = `./images/image-${currentProduct}.jpg`
+            cartIcon.addEventListener('click', () => {
+                cartSection.classList.toggle('hidden')
+                let cartDiv = ` 
+                <div class="cart-div container  bg-white rounded-xl flex flex-col justify-between  px-8  py-16 md:p-6 md:w-3/12 lg:w-4/12">
+                    <h2 class="mb-4 text-xl font-medium text-darkGrayishBlue">Cart</h2>
+                    <hr class="w-full mb-8 md:block">
+                    <p class="mx-auto  text-xl text-darkGrayishBlue pt-8 pb-16 md:pb-4">Your cart is empty</p>
+                </div>
+                `
+                if (counter > 0) {
+                    cartTotal = 125 * counter;
+                    cartTotal += cartTotal;
+                    cartDiv = `
+                    <div class="cart-div container  bg-white rounded-xl flex flex-col justify-between  px-8 md:p-0 md:p-6 md:w-3/12 lg:w-4/12">
+                        <h2 class="mb-4 text-xl font-medium text-darkGrayishBlue">Cart</h2>
+                        <hr class="container mb-8 md:block">
+                        <div class="flex justify-between items-center mb-4">
+                        <img src="./images/image-${currentProduct}-thumbnail.jpg" class="w-1/5 rounded-xl mr-4 md:mr-2 md:rounded" alt="">
+                        <div class="w-3/9">
+                            <p class="text-sm text-darkGrayishBlue">Fall Limited Edition Sneakers</p>
+                            <p class="text-sm text-darkGrayishBlue">$125.00 * <span>${counter}</span> <span class="font-bold text-black">${cartTotal}</span></p>
+                        </div>
+                        <img src="./images/icon-delete.svg" class="cursor-pointer" alt="delete-icon">
+                        </div>
+                        <div class="container rounded-lg bg-orange flex justify-center items-center mx-auto  mb-4 text-white text-sm hover:opacity-75">
+                            <button class="cursor-pointer py-3 px-8">Checkout</button>
+                        </div>
+                    </div>
+                    `
+                }
+                cartSection.innerHTML = cartDiv;
+            });            
             
-    
         })
     })
+
     
 
 
