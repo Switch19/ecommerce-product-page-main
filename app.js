@@ -13,15 +13,13 @@ let counter = 0;
 
 const productImage = document.querySelector(".main-product");
 const products = document.querySelectorAll(".product");
-z// console.log(productImage);
-// console.log(products);
-
 // Menu and Cart Toggle
 menuOpen.addEventListener('click', () => {
     menuToggle(menuOpen, menuClose)
 });
 menuCloseButton.addEventListener('click', () => {
     menuToggle(menuClose, menuOpen)
+    console.log("click")
 });
 // counter and Cart Buttons
     counterButtons.forEach((count) => {
@@ -54,6 +52,7 @@ menuCloseButton.addEventListener('click', () => {
         })
 }
 
+// Product Images
     products.forEach((product) => {
         product.addEventListener("click", (e) => {
             const currentProduct = e.currentTarget.classList[1];
@@ -95,8 +94,22 @@ menuCloseButton.addEventListener('click', () => {
     })
 
     
+// slider mobile
+const moveButtonMobile = document.querySelectorAll(".move-img")
+let productCounter = 1
 
-
+moveButtonMobile.forEach((moveto) => {
+    moveto.addEventListener("click", () => {
+        if (moveto.classList.contains("right") && productCounter < 4) {
+            productCounter++
+            productImage.src = `./images/image-product-${productCounter}.jpg`
+        }
+        else if (moveto.classList.contains("left") && productCounter > 1) {
+            productCounter--
+            productImage.src = `./images/image-product-${productCounter}.jpg`
+        }
+    })
+})
 
 
 
